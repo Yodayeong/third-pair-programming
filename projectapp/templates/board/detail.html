@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h1>상세 페이지</h1>
+<div class="container" style="padding-top:2rem; display:flex; align-items:center; justify-content:center;">
 
-    <h1>제목 : {{ board.title }}<span>{{ board.user }}</span></h1>
-    <p>내용 : {{ board.content }}</p>
-    <p>작성시간 : {{ board.content }}</p>
+    <div style="border-radius:15px; border:1px solid black; width:80%; height:25rem; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:5px 5px 5px lightgray;">
+        <div style="padding:1rem 0;">
+            <h1 style="background-color:antiquewhite; font-size:30px;"><span style="font-weight:bold;">제목 : </span>{{ board.title }} | <span style="font-weight:bold;">작성자 : </span>{{ board.user }}</h1>
+        </div>
+        <h1 style="font-size:20px;"><span style="font-weight:bold;">내용 : </span>{{ board.content }}</h1>
+        <h1 style="font-size:20px;"><span style="font-weight:bold;">작성시간 : </span>{{ board.created_at|date:'Y년 m월 d일' }}</h1>
 
-    <a type="submit" class="btn btn-warning" href="{% url 'board:index' %}">목록으로</a>
-    <a type="submit" class="btn btn-primary" href="{% url 'board:update' board.id %}">수정하기</a>
-    <a type="submit" class="btn btn-danger" href="{% url 'board:delete' board.id %}">삭제하기</a>
+        <div style="padding-top:2rem;">
+            <a type="submit" class="btn btn-outline-warning" href="{% url 'board:index' %}">목록으로</a>
+            <a type="submit" class="btn btn-outline-primary" href="{% url 'board:update' board.id %}">수정하기</a>
+            <a type="submit" class="btn btn-outline-danger" href="{% url 'board:delete' board.id %}">삭제하기</a>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
