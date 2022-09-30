@@ -1,26 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h1></h1>
+<div class="container my-5">
+    <div class="px-4 pb-3">
+        <h1 class="my-5 fw-bold text-center">New Ticket 게시글</h1>
 
-    <form action="{% url 'board:create' %}" , method="GET">
-        <select class="form-select" name="board" aria-label="Default select example">
-            <option selected>게시판 유형을 선택해주세요.</option>
-            <option value="자유 게시판">자유 게시판</option>
-            <option value="익명 게시판">익명 게시판</option>
-        </select>
-        <div class="mb-3 d-flex">
-            <label for="exampleFormControlInput1" class="form-label">제목</label>
-            <input type="text" name="title" class="form-control me-3" id="exampleFormControlInput1" style="width:45%">
-            <label for="exampleFormControlInput1" class="form-label">작성자</label>
-            <input type="text" name="user" class="form-control" id="exampleFormControlInput1" style="width:45%">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">리뷰 내용</label>
-            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <input type="submit" class="btn btn-outline-dark w-100" value="작성하기">
-    </form>
+        <form action="{% url 'board:create' %}" , method="GET">
+            <select class="form-select mb-3" name="board" aria-label="Default select example">
+                <option selected>게시판 유형을 선택해주세요.</option>
+                <option value="자유 게시판">자유 게시판</option>
+                <option value="익명 게시판">익명 게시판</option>
+            </select>
+            <div class="d-flex">
+                <div class="input-group mb-3 me-1">
+                    <span class="input-group-text" id="basic-addon1">제목</span>
+                    <input type="text" class="form-control" placeholder="제목" aria-label="title"
+                        aria-describedby="basic-addon1" name="title" required>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">작성자</span>
+                    <input type="text" class="form-control" placeholder="작성자" aria-label="작성자"
+                        aria-describedby="basic-addon1" name="user" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">리뷰 내용</label>
+                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="15"></textarea>
+            </div>
+            <input type="submit" class="btn btn-outline-dark w-100" value="작성하기">
+        </form>
+    </div>
 </div>
 {% endblock %}
