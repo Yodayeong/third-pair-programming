@@ -13,3 +13,5 @@ def search(request):
         )
 
         return render(request, 'search/search.html', {'query': query, 'results': results})
+
+# 후기 : 좋은 팀원을 만나서 즐겁게 작업을 할수 있었던것 같습니다. 
