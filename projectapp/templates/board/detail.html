@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>상세 페이지</h1>
+
+    <h1>제목 : {{ board.title }}<span>{{ board.user }}</span></h1>
+    <p>내용 : {{ board.content }}</p>
+    <p>작성시간 : {{ board.content }}</p>
+
+    <a type="submit" class="btn btn-warning" href="{% url 'board:index' %}">목록으로</a>
+    <a type="submit" class="btn btn-primary" href="{% url 'board:update' board.id %}">수정하기</a>
+    <a type="submit" class="btn btn-danger" href="{% url 'board:delete' board.id %}">삭제하기</a>
+</div>
+{% endblock %}

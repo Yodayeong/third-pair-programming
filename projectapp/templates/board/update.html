@@ -2,9 +2,9 @@
 
 {% block content %}
 <div class="container">
-    <h1></h1>
+    <h1>new 하윙</h1>
 
-    <form action="{% url 'board:create' %}" , method="GET">
+    <form action="{% url 'board:updateF' board.id %}" , method="GET">
         <select class="form-select" name="board" aria-label="Default select example">
             <option selected>게시판 유형을 선택해주세요.</option>
             <option value="자유 게시판">자유 게시판</option>
@@ -12,15 +12,18 @@
         </select>
         <div class="mb-3 d-flex">
             <label for="exampleFormControlInput1" class="form-label">제목</label>
-            <input type="text" name="title" class="form-control me-3" id="exampleFormControlInput1" style="width:45%">
+            <input type="text" name="title" class="form-control me-3" id="exampleFormControlInput1" style="width:45%"
+                value="{{ board.title }}">
             <label for="exampleFormControlInput1" class="form-label">작성자</label>
-            <input type="text" name="user" class="form-control" id="exampleFormControlInput1" style="width:45%">
+            <input type="text" name="user" class="form-control" id="exampleFormControlInput1" style="width:45%"
+                value="{{ board.user }}">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">리뷰 내용</label>
-            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="5">{{ board.content }}
+            </textarea>
         </div>
-        <input type="submit" class="btn btn-outline-dark w-100" value="작성하기">
+        <input type="submit" class="btn btn-outline-dark w-100" value="수정하기">
     </form>
 </div>
 {% endblock %}
