@@ -2,8 +2,8 @@
 
 {% block content %}
 <div class="container my-5">
-    <div class="px-4">
-        <h1 class="mb-5 fw-bold text-center">New Ticket 게시글</h1>
+    <div class="px-4 pb-3">
+        <h1 class="my-5 fw-bold text-center">New Ticket 게시글</h1>
 
         <form action="{% url 'board:create' %}" , method="GET">
             <select class="form-select mb-3" name="board" aria-label="Default select example">
