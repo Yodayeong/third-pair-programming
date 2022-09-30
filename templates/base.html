@@ -35,6 +35,12 @@
                         </li>
                     </ul>
                 </div>
+                <div>
+                    <form class="d-flex" action="{% url 'search:search' %}" method="GET">
+                        <input class="form-control me-2" type="search" placeholder="Search" name="kw">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
         </nav>
     </div>

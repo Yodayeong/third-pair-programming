@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container d-flex flex-column align-items-center py-5">
+    <h3 >검색결과 출력 - 검색어 : <b>"{{ query }}"</b></h3>
+    <hr>
+
+    <table class="table col-8 table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th scope="col">게시판</th>
+                <th scope="col">리뷰제목</th>
+                <th scope="col">작성자</th>
+                <th scope="col">작성시간</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <div>
+                <tr onclick="location.href='detail/{{board.id}}'" style="cursor:pointer;">
+                    <td>{{ result.boards }}</td>
+                    <td>{{ result.title }}</td>
+                    <td>{{ result.user }}</td>
+                    <td>{{ result.created_at }}</td>
+                </tr>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <a class="btn btn-outline-dark" type="button" href="{% url 'board:index' %}">뒤로가기</a>
+</div>
+
+{% endblock %}
