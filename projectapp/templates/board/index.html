@@ -13,12 +13,14 @@
             </tr>
         </thead>
         <tbody>
+            {% for board in boards %}
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>{{ board.boards }}</td>
+                <td>{{ board.title }}</td>
+                <td>{{ board.user }}</td>
+                <td>{{ board.created_at }}</td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
     <a class="btn btn-outline-dark w-100" type="button" href="{% url 'board:new' %}">리뷰 작성하기</a>
