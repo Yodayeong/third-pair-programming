@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex flex-column align-items-center py-5">
+    <h1 class="mb-5">영화리뷰 페이지</h1>
+    <table class="table col-8 table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th scope="col">게시판</th>
+                <th scope="col">리뷰제목</th>
+                <th scope="col">작성자</th>
+                <th scope="col">작성시간</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-outline-dark w-100" type="button" href="{% url 'board:new' %}">리뷰 작성하기</a>
+</div>
+{% endblock %}
