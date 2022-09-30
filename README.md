@@ -7,9 +7,7 @@
 
 ## 영화 리뷰 사이트 pair programming
 
-![ezgif.com-gif-maker (1)](README.assets/ezgif.com-gif-maker (1).gif)
-
-
+![video](README.assets/video.gif)
 
 - 장고 MTV 방식으로 영화 리뷰 사이트를 CRUD로 제작함
   - create를 한 후에는 detail page로 이동하도록 함
